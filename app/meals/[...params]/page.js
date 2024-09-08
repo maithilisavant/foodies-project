@@ -9,7 +9,9 @@ const MealPage = ({ params }) => {
   const meal = meals.find((meal) => meal?.name?.toLowerCase()?.replace(/ /g, '-') === name);
 
   if (!meal) {
-    return <div>Meal not found</div>;
+    return <div style={{background: "white", height:"100vh", margin:"auto"}}>
+      Meal not found
+    </div>;
   }
 
   return (

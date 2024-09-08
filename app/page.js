@@ -1,27 +1,61 @@
 'use client';
 import { useRouter } from "next/navigation";
-import { meals } from "./constants";
+// import { meals } from "./constants";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { endpoint } from "@/utils/endpoint";
+import { MealsPopup } from "./components/mealsPopup";
 
 export default function Home() {
   const router = useRouter();
+  const [data, setData] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    const fetchData = async () => {
+      let res = await handleGetData();
+      // console.log({res})
+      setData(res?.meals);
+      setLoading(false);
+    };
+
+    fetchData();
+  }, []);
+
+  const handleGetData = async () => {
+    const data = await fetch(`${endpoint}/getMeals`)
+    if (!data.ok) {
+      console.log('Failed to fetch data')
+    }else{
+      return data.json()
+    }
+  }
 
   const handleRedirection = (item) => {
-    let slug = item?.name?.toLowerCase()?.replace(/ /g, '-');
-    
-    // DYNAMIC ROUTE WITH MULTIPLE PARAMS
-    router.push(`/meals/${slug}/${item?.id}/${item?.city}`);
+    let id = item?.id;
 
     // DYNAMIC ROUTE WITH SINGLE PARAM
-    // router.push(`/meals/${slug}`)
+    router.push(`/meals/${id}`)
+    
+    // DYNAMIC ROUTE WITH MULTIPLE PARAMS
+    // router.push(`/meals/${slug}/${item?.id}/${item?.city}`);
   }
+
 
   return (
     <main style={{ background: "white", padding: "20px" }}>
       <header style={{ textAlign: "center", marginBottom: "40px" }}>
         <h1>Recipe Collection</h1>
       </header>
-      <div
+      <div style={{display: "flex", width: "80%", margin: "auto", justifyContent:"end", marginBottom: "20px"}}>
+        <button style={{borderRadius: "10px", padding:"15px", background:"white", cursor: "pointer"}}
+          onClick={() => router.push(`/add-meal`)}
+          >
+          Add New Meal
+        </button>
+      </div>
+      {!loading && <div
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
@@ -30,7 +64,7 @@ export default function Home() {
           margin: "auto",
         }}
       >
-        {meals?.map((recipe, i) => (
+        {data?.length > 0 && data?.map((recipe, i) => (
           <div
             key={recipe.id}
             style={{
@@ -49,6 +83,7 @@ export default function Home() {
               height={200}
               src={recipe.image}
               alt={recipe.name}
+              layout="responsive"
               style={{ width: "100%", height: "200px", objectFit: "cover" }}
             />
             <div style={{ padding: "10px" }}>
@@ -62,7 +97,7 @@ export default function Home() {
             </div>
           </div>
         ))}
-      </div>
+      </div>}
     </main>
   );
 }
