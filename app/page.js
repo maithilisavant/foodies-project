@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { endpoint } from "@/utils/endpoint";
 import { MealsPopup } from "./components/mealsPopup";
+import "./globals.css";
 
 export default function Home() {
   const router = useRouter();
@@ -48,9 +49,10 @@ export default function Home() {
       <header style={{ textAlign: "center", marginBottom: "40px" }}>
         <h1>Recipe Collection</h1>
       </header>
-      <div style={{display: "flex", width: "80%", margin: "auto", justifyContent:"end", marginBottom: "20px"}}>
-        <button style={{borderRadius: "10px", padding:"15px", background:"white", cursor: "pointer"}}
+      <div style={{display: "flex", width: "80%", margin: "auto", justifyContent:"end", marginBottom: "20px"}} >
+        <button 
           onClick={() => router.push(`/add-meal`)}
+          className="add-btn"
           >
           Add New Meal
         </button>

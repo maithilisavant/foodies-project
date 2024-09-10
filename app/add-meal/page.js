@@ -2,8 +2,10 @@
 import React, { useState } from 'react';
 import "./style.css";
 import { endpoint } from '@/utils/endpoint';
+import { useRouter } from "next/navigation";
 
 export default function MealForm() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
     cooking_time: '',
@@ -57,6 +59,7 @@ export default function MealForm() {
         steps: '',
         image: '',
       });
+      router.push(`/`)
     } catch (error) {
       console.error('Error:', error);
     }
@@ -151,3 +154,5 @@ export default function MealForm() {
     </div>
   );
 }
+
+//style={{borderRadius: "10px", padding:"15px", background:"white", cursor: "pointer"}}

@@ -21,7 +21,7 @@ export async function POST(req) {
             name: body.name,
             cooking_time: body.cooking_time,
             prep_time: body.prep_time,
-            image: body.image || 'some_url',
+            image: body.image || '',
             steps: body.steps,
             city: body.city,
         };

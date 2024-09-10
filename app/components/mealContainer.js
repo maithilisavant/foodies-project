@@ -43,11 +43,19 @@ export const MealContainer = (props) => {
               listStyle: "decimal" 
             }}
           >
-            {props?.meal?.steps.map((step, index) => (
+            {typeof props?.meal?.steps === "object" ?
+            props?.meal?.steps.map((step, index) => (
               <li key={index} style={{ margin: "20px 10px" }}>
                 {step}
               </li>
-            ))}
+            )) : (
+              props?.meal?.steps.split('\n').map((line, index) => (
+                <span key={index}>
+                  {line}
+                  <br />
+                </span>
+              ))
+            )}
           </ol>
         </div>
       </div>

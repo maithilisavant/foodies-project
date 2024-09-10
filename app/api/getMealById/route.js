@@ -17,12 +17,10 @@ export async function GET(req) {
     if (!mealDocuments.length) {
         return NextResponse.json({ error: 'No data found in collection' }, { status: 404 });
     }
-
-    const mealDocument = mealDocuments[0];
-    if (!mealDocument.data) {
+    if (!mealDocuments) {
       return NextResponse.json({ error: 'No data found in collection' }, { status: 404 });
     }
-    const meal = mealDocument.data.find(meal => meal.id === parseInt(id));
+    const meal = mealDocuments.find(meal => meal.id === parseInt(id));
     if (meal) {
       return NextResponse.json(meal);
     } else {

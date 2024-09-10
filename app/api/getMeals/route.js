@@ -6,5 +6,7 @@ export async function GET() {
     const db = client.db('meals');
     const meals = await db.collection('foodies-app').find({}).toArray();
     
-    return NextResponse.json({ meals });
+    const reversedMeals = meals.reverse();
+    
+    return NextResponse.json({ meals: reversedMeals });
 }

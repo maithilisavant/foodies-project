@@ -55,3 +55,18 @@ svg {
   font-weight: 500;
   color: #ddd8d8;
 }
+.add-btn {
+  background: none;
+  border: none;
+  /* color: #fff; */
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  border: 1px solid black;
+  color: black;
+  padding: 10px
+}

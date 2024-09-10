@@ -130,8 +130,9 @@ form .form-row .textarea {
     width: 300%;
     position: absolute;
     left: -100%;
-    background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+    background: white;
     transition: all 0.4s;
+
 }
 
 .submit-btn .input-data:hover .inner {
@@ -141,7 +142,7 @@ form .form-row .textarea {
 .submit-btn .input-data input {
     background: none;
     border: none;
-    color: #fff;
+    /* color: #fff; */
     font-size: 17px;
     font-weight: 500;
     text-transform: uppercase;
@@ -149,6 +150,8 @@ form .form-row .textarea {
     cursor: pointer;
     position: relative;
     z-index: 2;
+    border: 1px solid black;
+        color: black;
 }
 
 @media (max-width: 700px) {
