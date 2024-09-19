@@ -1,1 +1,1 @@
-export const mongoUri = 'mongodb+srv://maithilisavant31:Me31031997@cluster0.kt9kk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+export const mongoUri = 'YOUR_MONGO_URI';
