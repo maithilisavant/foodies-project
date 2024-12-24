@@ -37,7 +37,7 @@ Make sure you have the following installed:
 2. Install the dependencies
    
    npm install
-    # or
+   or
    yarn install
 
    
@@ -65,11 +65,11 @@ Make sure you have the following installed:
 6. Running the Application
 
    npm run dev
-     # or
+   or
    yarn dev
 
 8. Running Tests
 
    npm test
-      # or
+   or
    yarn test
