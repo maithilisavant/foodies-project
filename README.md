@@ -63,11 +63,13 @@ Make sure you have the following installed:
 
 
 6. Running the Application
+
    npm run dev
      # or
    yarn dev
 
-7. Running Tests
-    npm test
+8. Running Tests
+
+   npm test
       # or
-    yarn test
+   yarn test
