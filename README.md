@@ -17,7 +17,8 @@ This project is a Next.js application that uses MongoDB as the backend database 
 - **MongoDB**: A NoSQL database for storing application data.
 - **Jest**: A testing framework for JavaScript.
 
-- ## Getting Started
+
+# Getting Started
 
 ### Prerequisites
 
