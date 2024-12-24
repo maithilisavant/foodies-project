@@ -48,6 +48,7 @@ Make sure you have the following installed:
 
 4. Folder Structure
    /root
+
    ├── /components        # React components
 
    ├── /pages             # Next.js pages
