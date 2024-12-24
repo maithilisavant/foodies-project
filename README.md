@@ -11,7 +11,7 @@ This project is a Next.js application that uses MongoDB as the backend database 
 - Responsive design
 - Comprehensive test coverage with Jest
 
-- ## Technologies Used
+## Technologies Used
 
 - **Next.js**: A React framework for building server-rendered applications.
 - **MongoDB**: A NoSQL database for storing application data.
