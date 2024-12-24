@@ -48,20 +48,25 @@ Make sure you have the following installed:
 
 4. Folder Structure
    /root
-  ├── /components        # React components
-  ├── /pages             # Next.js pages
-  ├── /styles            # CSS styles
-  ├── /utils             # Utility functions
-  ├── /tests             # Jest test files
-  └── /api               # API routes for backend logic
+   ├── /components        # React components
+
+   ├── /pages             # Next.js pages
+
+   ├── /styles            # CSS styles
+
+   ├── /utils             # Utility functions
+
+   ├── /tests             # Jest test files
+
+   └── /api               # API routes for backend logic
 
 
-5. Running the Application
+6. Running the Application
    npm run dev
      # or
    yarn dev
 
-6. Running Tests
+7. Running Tests
     npm test
       # or
     yarn test
