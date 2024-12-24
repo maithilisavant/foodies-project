@@ -1,6 +1,6 @@
 'use client';
 import { useRouter } from "next/navigation";
-// import { meals } from "./constants";
+import { meals } from "./constants";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { endpoint } from "@/utils/endpoint";
@@ -15,9 +15,9 @@ export default function Home() {
   useEffect(() => {
     setLoading(true);
     const fetchData = async () => {
-      let res = await handleGetData();
+      // let res = await handleGetData();
       // console.log({res})
-      setData(res?.meals);
+      setData(meals);
       setLoading(false);
     };
 
@@ -37,10 +37,10 @@ export default function Home() {
     let id = item?.id;
 
     // DYNAMIC ROUTE WITH SINGLE PARAM
-    router.push(`/meals/${id}`)
+    // router.push(`/meals/${id}`)
     
     // DYNAMIC ROUTE WITH MULTIPLE PARAMS
-    // router.push(`/meals/${slug}/${item?.id}/${item?.city}`);
+    router.push(`/meals/${item?.id}/${item?.name}`);
   }
 
 
